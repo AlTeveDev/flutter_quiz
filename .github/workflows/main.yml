@@ -19,7 +19,7 @@ jobs:
 
       - uses: cedvdb/action-flutter-build-web@v1
         with:
-          build-cmd: flutter build web --release
+          build-cmd: flutter build web --release --base-href /flutter_quiz/
           working-directory: ./
 
       - name: Archive Production artifact
