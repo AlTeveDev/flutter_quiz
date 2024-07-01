@@ -17,9 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
       - uses: cedvdb/action-flutter-build-web@v1
         with:
           build-cmd: flutter build web --release
@@ -29,6 +26,13 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: release
+          path: build/web
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
           path: build/web
 
       - name: Deploy to GitHub Pages
