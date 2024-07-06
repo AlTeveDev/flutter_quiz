@@ -43,7 +43,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: ./.github/workflows/flutter-ios.yml
+      - uses: AlTeveDev/action-flutter-build-ios
         with:
           # always use --export-options-plist=ios/GithubActionsExportOptions.plist
           build-cmd: flutter build ipa --release --flavor dev --export-options-plist=ios/GithubActionsExportOptions.plist
