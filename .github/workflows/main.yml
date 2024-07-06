@@ -46,7 +46,7 @@ jobs:
       - uses: AlTeveDev/action-flutter-build-ios@v1
         with:
           # always use --export-options-plist=ios/GithubActionsExportOptions.plist
-          build-cmd: flutter build ipa --release --flavor dev --export-options-plist=ios/GithubActionsExportOptions.plist
+          build-cmd: flutter build ipa --release --flavor dev
           working-directory: ./
           flutterfire: false
 
