@@ -44,21 +44,15 @@ jobs:
           working-directory: ./
           flutterfire: false
 
-      - run: |
-          cd archive
-          cd Runner.xcarchive
-          cd Products
-        working-directory: build/ios
-
       - run: mkdir Payload
-        working-directory: build/ios/archive/Runner.xcarchive/Products/Applocations
+        working-directory: build/ios/archive/Runner.xcarchive/Products/Applications
 
       - run: mv Runner.app/ Payload
-        working-directory: build/ios/archive/Runner.xcarchive/Products/Applocations
+        working-directory: build/ios/archive/Runner.xcarchive/Products/Applications
 
       - name: Zip output
         run: zip -qq -r -9 FlutterIpaExport.ipa Payload
-        working-directory: build/ios/archive/Runner.xcarchive/Products/Applocations
+        working-directory: build/ios/archive/Runner.xcarchive/Products/Applications
 
       - name: Archive IPA
         uses: actions/upload-artifact@v2
