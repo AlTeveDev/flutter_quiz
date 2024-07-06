@@ -21,12 +21,6 @@ jobs:
           build-cmd: flutter build web --release --base-href /flutter_quiz/
           working-directory: ./
 
-      - name: Archive Production artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: release
-          path: build/web
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
