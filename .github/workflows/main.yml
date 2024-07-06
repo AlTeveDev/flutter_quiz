@@ -44,7 +44,7 @@ jobs:
           working-directory: ./
           flutterfire: false
 
-      - run: ls
+      - run: tree
         working-directory: build/ios
 
       - run: mkdir Payload
