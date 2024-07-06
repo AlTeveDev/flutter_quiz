@@ -48,6 +48,7 @@ jobs:
           # always use --export-options-plist=ios/GithubActionsExportOptions.plist
           build-cmd: flutter build ipa --release --flavor dev --export-options-plist=ios/GithubActionsExportOptions.plist
           working-directory: ./
+          flutterfire: false
 
       - name: Archive IPA
         uses: actions/upload-artifact@v2
