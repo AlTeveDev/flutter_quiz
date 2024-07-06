@@ -44,7 +44,10 @@ jobs:
           working-directory: ./
           flutterfire: false
 
-      - run: ls */*
+      - run: |
+          cd archive
+          cd Runner.xcarchive
+          cd Products
         working-directory: build/ios
 
       - run: mkdir Payload
