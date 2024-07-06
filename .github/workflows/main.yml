@@ -38,5 +38,24 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+build-apple:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: cedvdb/action-flutter-build-ios@v1
+        with:
+          # always use --export-options-plist=ios/GithubActionsExportOptions.plist
+          build-cmd: flutter build ipa --release --flavor dev --export-options-plist=ios/GithubActionsExportOptions.plist
+          working-directory: ./
+
+      - name: Archive IPA
+        uses: actions/upload-artifact@v2
+        with:
+          name: release-ipa
+          # Try running the build locally with the build command to be sure of this path
+          path: build/ios/ipa/App-dev.ipa
+
+
 
           
